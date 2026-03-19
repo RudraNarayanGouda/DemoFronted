@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <form action="" onsubmit="return myFun()">
+    <div class="container">
+        <h2>Sign Up</h2>
+
+        <input type="text" id="name" placeholder="Full Name">
+        <div id="msg"></div>
+        <input type="text" id="mobile" placeholder="Mobile Number">
+        <div id="nummsg"></div>
+        <input type="email" id="email" placeholder="Email">
+
+        <div class="captcha-box">
+            <div class="captcha" id="captcha"></div>
+            <button onclick="generateCaptcha()" style="width:auto;">↻</button>
+        </div>
+
+        <input type="text" id="captchaInput" placeholder="Enter Captcha">
+
+        <button onclick="register()">Register</button>
+
+        <p class="error" id="message"></p>
+
+    </div>
+</form>
+    <script src="script.js"></script>
+
+</body>
+
+</html>

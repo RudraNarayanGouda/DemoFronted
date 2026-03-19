@@ -1,0 +1,85 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-image:url("./login-background.jpeg") ;
+    background-repeat: no-repeat;
+    /* background-position:center; */
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+.container{
+    width: 60%;
+    max-width: 350px;
+    min-width: 250px;
+    color:black;
+    border: 1px solid black;
+    /* text-align: center; */
+    border-radius: 10px;
+    margin: 0;
+    padding: 0.5rem;
+    /* background-color: #f0f0f0; */
+    box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.3);
+}
+
+.root{
+    width: 90%;
+    /* border-top: 1px solid black; */
+    padding: 0.5rem;
+    margin: auto;
+}
+#signin{
+    border-bottom: 1px solid rgb(118, 118, 114);
+    text-align: center;   
+}
+#info{
+    margin: auto;
+    padding: 1rem 0rem;
+}
+#info label{
+    display: block;
+    text-align: left;
+    margin: 5px;
+}
+#info input{
+    display: inline-block;
+    width: 90%;
+    margin: 5px;
+}
+#info input[type="checkbox"] {
+  /* width: auto; */
+  /* margin-right: 8px; */
+  width: 1.5rem;
+  height: 1rem;
+  border: 1px solid black;
+  border-radius: 20px;
+}
+#info input[type="checkbox"] + label {
+  display: inline;
+  text-align: left;
+  margin-right: 2.5rem;
+  margin-left: -0.5rem;
+}
+#info button{
+    display: block;
+    margin: 10px auto;
+    padding: 8px 20px;
+    width:90%;
+    border: 2px solid whitesmoke;
+    background-color: black;
+    color: aliceblue;
+    border-radius: 2rem;
+}
+#info a{
+    color: black;
+}
+#signup{
+ text-align: center;
+}
+#signup a{
+    text-decoration: none;
+    color: black;
+}
+

@@ -1,0 +1,36 @@
+body{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.container{
+    width:70%;
+    max-width: 350px;
+    min-width: 250px;
+    padding: 2rem;
+    border: 1px solid black;
+    border-radius: 1rem;
+}
+.container h1{
+    border-bottom:1px solid black;
+    text-align: center;
+}
+.container label{
+    display: block;
+    padding: 0.5rem 0rem;
+    font-size: larger;
+}
+.container input{
+    display: inline-block;
+    width: 100%;
+}
+button{
+    width: 100%;
+    margin: 0.5rem 0rem;
+    padding: 0.3rem;
+    border: 1px solid black;
+    border-radius: 2rem;
+}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>online ticket tracking page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+
+        <form action="" onsubmit="return myFun()">
+            <div class="root">
+                <div id="signin">
+                    <h1>Welcome Back</h1>
+                    <p>Please enter your details to sign in.</p>
+                </div>
+                <div id="info">
+                    <label for="name">User Name</label>
+                    <input type="text" name="name" id="name" placeholder="Enter your user name" required>
+                    <label for="pas">Password</label>
+                    <input type="password" id="pas" placeholder="Enter Password" required>
+                    
+                    <input type="checkbox" name="check" id="check">
+                    <label for="check">Remember Me</label>
+                    <a href="/password/index.html">Forgot Password?</a>
+                    <button type="submit">Sign in</button>
+                    
+                </div>
+                <div id="signup">
+                <p>Don't have an account yet?</p>
+                <a href="/signup/index.html">Sign up</a>
+                </div>
+            </div>
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
