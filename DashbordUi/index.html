@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background: #f4f6f9;
+            text-align: center;
+        }
+
+        h2 { margin-top: 20px; }
+
+        .ticket-card {
+            background: white;
+            padding: 15px;
+            margin: 10px auto;
+            width: 380px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        input, select { margin: 5px; padding: 5px; }
+
+        button {
+            margin: 5px;
+            padding: 6px 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .delete { background: red; color: white; }
+        .update { background: blue; color: white; }
+        .save { background: green; color: white; }
+        .download { background: purple; color: white; }
+
+        .OPEN { color: green; font-weight: bold; }
+        .IN_PROGRESS { color: orange; font-weight: bold; }
+        .CLOSED { color: red; font-weight: bold; }
+
+    </style>
+
+    <!-- jsPDF -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+
+<body>
+
+<h2>My Tickets 🎫</h2>
+<button onclick="logout()">Logout</button>
+
+<div id="ticketList"></div>
+
+<script src="script.js"></script>
+
+</body>
+</html> 

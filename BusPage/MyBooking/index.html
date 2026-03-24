@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Booking</title>
+    <link rel="stylesheet" href="mainstyle.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="navbar">
+                <div class="nav-logo">S</div>
+                <div class="nav-items">
+                    <a href="/index.html">Home</a>
+                    <a href="/mybooking.html" class="active">My Booking</a>
+                    <a href="/loginpage/login.html">Login/SignUp</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="booking-section">
+            <h1>My Bookings</h1>
+            <table border="1" id="myTicketsTable">
+                <thead>
+                    <tr>
+                        <th>From</th>
+                        <th>To</th>
+                        <th>Date</th>
+                        <th>Price</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Tickets will load here -->
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <footer>
+        <p>Bus Charter Theme By M-SoftTech. © 2026 All Rights Reserved.</p>
+    </footer>
+
+     <script>
+         const userId = localStorage.getItem("userId") || 1; // logged-in user id
+
+    function loadUserTickets() {
+        fetch(`http://localhost:8080/tickets/user/${userId}`)
+            .then(res => res.json())
+            .then(tickets => {
+                const tbody = document.querySelector("#myTicketsTable tbody");
+                tbody.innerHTML = "";
+                tickets.forEach(t => {
+                    const row = document.createElement("tr");
+                    row.innerHTML = `
+                        <td>${t.source}</td>
+                        <td>${t.destination}</td>
+                        <td>${t.date}</td>
+                        <td>${t.price}</td>
+                        <td>${t.status}</td>
+                    `;
+                    tbody.appendChild(row);
+                });
+            })
+            .catch(err => console.error("Error fetching tickets:", err));
+    }
+
+    // Initial load
+    loadUserTickets();
+    
+    </script>
+</body>
+</html>

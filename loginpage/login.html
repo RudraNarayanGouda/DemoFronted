@@ -1,41 +1,51 @@
 <!DOCTYPE html>
-<html lang="en">
 
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>online ticket tracking page</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Travel Login</title>
+
+<!-- Font Awesome Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
-    <div class="container">
 
-        <form action="" onsubmit="return myFun()">
-            <div class="root">
-                <div id="signin">
-                    <h1>Welcome Back</h1>
-                    <p>Please enter your details to sign in.</p>
-                </div>
-                <div id="info">
-                    <label for="name">User Name</label>
-                    <input type="text" name="name" id="name" placeholder="Enter your user name" required>
-                    <label for="pas">Password</label>
-                    <input type="password" id="pas" placeholder="Enter Password" required>
-                    
-                    <input type="checkbox" name="check" id="check">
-                    <label for="check">Remember Me</label>
-                    <a href="/password/index.html">Forgot Password?</a>
-                    <button type="submit">Sign in</button>
-                    
-                </div>
-                <div id="signup">
-                <p>Don't have an account yet?</p>
-                <a href="/signup/index.html">Sign up</a>
-                </div>
-            </div>
-        </form>
+<!-- 🔥 REAL 4K TRAVEL VIDEO -->
+<video autoplay muted loop playsinline>
+  <source src="video_20260323_154429_edit.mp4" type="video/mp4">
+</video>
+<div class="overlay"></div>
+
+<div class="container">
+  <div class="login-box">
+    <h2>Travel Login ✈️</h2>
+
+    <form id="loginForm">
+      <div class="input-box">
+        <i class="fa fa-envelope"></i>
+        <input type="email" id="email"placeholder="Email" required>
+      </div>
+
+      <div class="input-box">
+        <i class="fa fa-lock"></i>
+        <input type="password" id="password" placeholder="Password" required>
+      </div>
+
+      <button class="btn" type="submit">Login</button>
+    </form>
+
+    <div class="extra">
+      <p>Forgot Password? <a href="#">Click here</a></p>
+      <p>New user? <a href="/signup/index.html">Create Account</a></p>
     </div>
-    <script src="script.js"></script>
+    <div id="msg"></div>
+  </div>
+  
+</div>
+<script src="script.js"> </script>
 </body>
 </html>

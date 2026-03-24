@@ -15,11 +15,11 @@ form.addEventListener("submit", function (e) {
 
     // Get values
     const name = document.getElementById("username").value.trim();
-    const from = document.getElementById("from").value.trim();
-    const to = document.getElementById("to").value.trim();
-    const date = document.getElementById("date").value;
+    const from = document.getElementById("userFrom").value.trim();
+    const to = document.getElementById("userTo").value.trim();
+    const date = document.getElementById("userDate").value;
     const travelClass = document.getElementById("class").value;
-    const passengers = document.getElementById("passengers").value;
+    const passengers = document.getElementById("userPassengers").value;
 
     // Validation
     if (

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="sidebar">
+    <h2>Admin Panel</h2>
+    <ul>
+        <li onclick="loadTickets()">All Tickets</li>
+        <li onclick="loadStats()">Dashboard</li>
+    </ul>
+</div>
+
+<div class="main">
+
+    <h1>Dashboard</h1>
+
+    <!-- Stats -->
+    <div class="cards">
+        <div class="card">
+            <h3>Total Tickets</h3>
+            <p id="totalTickets">0</p>
+        </div>
+
+        <div class="card">
+            <h3>Total Revenue</h3>
+            <p id="totalRevenue">0</p>
+        </div>
+
+        <div class="card">
+            <h3>Total Users</h3>
+            <p id="totalUsers">0</p>
+        </div>
+    </div>
+
+    <!-- Filter -->
+    <div class="filter">
+        <select id="typeFilter" onchange="filterTickets()">
+            <option value="ALL">All</option>
+            <option value="BUS">Bus</option>
+            <option value="TRAIN">Train</option>
+            <option value="FLIGHT">Flight</option>
+        </select>
+    </div>
+
+    <!-- Table -->
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>User</th>
+                <th>Type</th>
+                <th>Price</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody id="ticketTable"></tbody>
+    </table>
+
+</div>
+
+<script src="script.js"></script>
+<script src="/AdminPanel/script.js"></script>
+</body>
+</html> 

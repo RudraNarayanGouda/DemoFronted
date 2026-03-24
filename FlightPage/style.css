@@ -1,7 +1,7 @@
 *{
   margin: 0;
   padding: 0;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 .navbar{
   height: 60px;
@@ -36,7 +36,7 @@
     color: orange;
 }
 button{
-  background-color: orange;
+  background-color: rgb(18, 97, 255);
   color: white;
   border-radius: 30px;
   height: 40px;
@@ -47,9 +47,9 @@ button{
   transition: 0.3s;
 }
 button:hover{
-  color: orange;
-  background-color: white;
-  font-size: small;
+  color: white;
+  background-color: rgb(18, 97, 255);
+  font-size: larger;
   font-weight: 500;
 }
 .section-container{
@@ -73,6 +73,44 @@ button:hover{
   width:90%;
   margin-bottom: 2rem;
 }
+.booking-container .input-group {
+  position: relative;
+  width: 100%;
+}
+
+.booking-container input {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 1rem;
+  border: none;
+  border-bottom: 1px solid #3d5cb8;
+  outline: none;
+  background: transparent;
+  color: #0f172a;
+}
+
+.booking-container label {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #0f172a;
+  pointer-events: none;
+  transition: 0.3s ease all;
+}
+
+.booking-container input:focus + label,
+.booking-container input:not(:placeholder-shown) + label {
+  top: -10px;           /* Moves label above */
+  font-size: 0.85rem;   /* Smaller font when above */
+  color: #00a6ff;       /* Optional highlight */
+}
+
+.booking-container input::placeholder {
+  color: transparent;   /* Hides the placeholder text */
+}
 .booking-nav{
   background-color: #f1f5f9;
   max-width: 600px;
@@ -81,10 +119,6 @@ button:hover{
   align-items: center;
   margin: auto;
   border-radius: 5px;
-}
-.booking-nav span.active {
-  background-color: #00a6ff;
-  color: white;
 }
 .booking-nav span{
   flex: 1;
@@ -158,6 +192,10 @@ button:hover{
   border-radius: 20px;
   color: white;
   cursor: pointer;
+}
+.booking-nav span.active {
+  background-color: #00a6ff;
+  color: white;
 }
 .plan-container .subheader{
   text-align: center;

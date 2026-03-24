@@ -1,113 +1,65 @@
-// ==============================
-// DOM Elements
-// ==============================
+document.addEventListener("DOMContentLoaded", function() {
 
-const form = document.querySelector(".right-cont form");
-const fromInput = document.getElementById("from");
-const toInput = document.getElementById("to");
-const dateInput = document.getElementById("date");
-const timeInput = document.getElementById("time");
-const seatSelect = document.getElementById("seat");
+    const bookBtn = document.getElementById("bookTicketBtn");
+    const fromInput = document.getElementById("from");
+    const toInput = document.getElementById("to");
+    const dateInput = document.getElementById("date");
+    const timeInput = document.getElementById("time");
+    const seatSelect = document.getElementById("seat");
+    const ticketForm = document.querySelector("form");
 
-const bookButtons = document.querySelectorAll(".butn");
-const scrollTopBtn = document.querySelector(".scroll-top a");
-const navLinks = document.querySelectorAll(".nav-items a");
+    bookBtn.addEventListener("click", function() {
 
-// ==============================
-// FORM SUBMIT FUNCTION
-// ==============================
-form.addEventListener("submit", function (e) {
-    e.preventDefault();
+        // ✅ LOGIN CHECK
+        const userId = localStorage.getItem("userId");
 
-    const from = fromInput.value.trim();
-    const to = toInput.value.trim();
-    const date = dateInput.value;
-    const time = timeInput.value;
-    const seat = seatSelect.value;
-
-    // Validation
-    if (!from || !to || !date || !time || seat === "1") {
-        alert("⚠️ Please fill all fields correctly!");
-        return;
-    }
-
-    // Show booking confirmation
-    alert(
-        `✅ Booking Confirmed!\n\nFrom: ${from}\nTo: ${to}\nDate: ${date}\nTime: ${time}\nSeats: ${seat}`
-    );
-
-    // Reset form
-    form.reset();
-});
-
-// ==============================
-// BOOK NOW BUTTONS
-// ==============================
-bookButtons.forEach((btn) => {
-    btn.addEventListener("click", () => {
-        alert("🚌 Redirecting to booking page...");
-        // You can redirect later:
-        // window.location.href = "booking.html";
-    });
-});
-
-// ==============================
-// SMOOTH SCROLLING
-// ==============================
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener("click", function (e) {
-        e.preventDefault();
-
-        const target = document.querySelector(this.getAttribute("href"));
-        if (target) {
-            target.scrollIntoView({
-                behavior: "smooth"
-            });
+        if(!userId){
+            alert("⚠️ Please login first to book ticket!");
+            window.location.href = "/loginpage/login.html";
+            return;
         }
-    });
-});
+        const from = fromInput.value.trim();
+        const to = toInput.value.trim();
+        const date = dateInput.value;
+        const time = timeInput.value;
+        const seats = parseInt(seatSelect.value);
 
-// ==============================
-// SCROLL TO TOP
-// ==============================
-scrollTopBtn.addEventListener("click", function (e) {
-    e.preventDefault();
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-    });
-});
-
-// ==============================
-// NAVBAR ACTIVE LINK
-// ==============================
-navLinks.forEach(link => {
-    link.addEventListener("click", function () {
-        navLinks.forEach(l => l.classList.remove("active"));
-        this.classList.add("active");
-    });
-});
-
-// ==============================
-// SCROLL ANIMATION (Fade In)
-// ==============================
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.style.opacity = 1;
-            entry.target.style.transform = "translateY(0)";
+        if(!from || !to || !date || !time || seats === 0){
+            alert("⚠️ Please fill all fields correctly!");
+            return;
         }
-    });
-}, {
-    threshold: 0.2
-});
 
-document.querySelectorAll("section").forEach(section => {
-    section.style.opacity = 0;
-    section.style.transform = "translateY(50px)";
-    section.style.transition = "all 0.6s ease";
-    observer.observe(section);
+        const ticket = {
+            source: from,
+            destination: to,
+            date: date,
+            time: time,
+            seats: seats,
+            price: seats * 100,
+            type:"Bus"
+        };
+
+        // const userId = localStorage.getItem("userId") || 1;
+
+        fetch(`http://localhost:8080/tickets?userId=${userId}`, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(ticket)
+        })
+        .then(res => {
+            console.log("Status:", res.status);
+            return res.json();
+        })
+        .then(data => {
+            console.log("Server Response:", data);
+            alert("🎉 Ticket Booked Successfully!");
+            ticketForm.reset(); // ✅ Now works
+        })
+        .catch(err => {
+            console.error("Error booking ticket:", err);
+            alert("❌ Error booking ticket. Check console!");
+        });
+
+    });
+
 });
-if (entry.isIntersecting) {
-    entry.target.classList.add("show");
-}

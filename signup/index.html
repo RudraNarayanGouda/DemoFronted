@@ -9,7 +9,10 @@
 </head>
 
 <body>
-    <form action="" onsubmit="return myFun()">
+    <video autoplay muted loop playsinline>
+  <source src="video_20260323_154429_edit.mp4" type="video/mp4">
+</video>
+    <form id="signupForm">
     <div class="container">
         <h2>Sign Up</h2>
 
@@ -18,15 +21,15 @@
         <input type="text" id="mobile" placeholder="Mobile Number">
         <div id="nummsg"></div>
         <input type="email" id="email" placeholder="Email">
-
+        <input type="password" id="password" placeholder="Create Password">
         <div class="captcha-box">
             <div class="captcha" id="captcha"></div>
             <button onclick="generateCaptcha()" style="width:auto;">↻</button>
         </div>
-
+        
         <input type="text" id="captchaInput" placeholder="Enter Captcha">
 
-        <button onclick="register()">Register</button>
+        <button type="submit">Register</button>
 
         <p class="error" id="message"></p>
 
@@ -36,4 +39,6 @@
 
 </body>
 
-</html>
+</html>  
+  
+

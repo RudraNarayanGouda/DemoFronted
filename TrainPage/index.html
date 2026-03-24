@@ -9,12 +9,13 @@
    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
   <header id="site-header">
     <video autoplay muted loop id="bg-video">
-            <source src="lv_0_20260311212448.mp4" type="video/mp4">
+            <source src="trainvid.mp4" type="video/mp4">
         </video>
      <nav>
       <div class="navbar">
@@ -22,106 +23,58 @@
           <div class="logo"></div>
         </div>
         <div class="nav-items">
-          <a href="/BusPage/main.html"><ion-icon name="bus-outline"></ion-icon>Bus</a>
-          <a href="/FlightPage/index.html"><ion-icon name="airplane-outline"></ion-icon>Flights</a>
+          <a href="/ticket project/main-page/main.html"><ion-icon name="bus-outline"></ion-icon>Bus</a>
+          <a href="/ticket project/flight-page/index.html"><ion-icon name="airplane-outline"></ion-icon>Flights</a>
           <a href="#"><ion-icon name="train-outline"></ion-icon>Train</a>
-          <a href="#">My Booking</a>
+          <a href="/DashbordUi/index.html">My Booking</a>
           <a href="#about">About Us</a>
-          <a href="/loginpage/login.html"><ion-icon name="person-circle-outline"></ion-icon>Login/SignUp</a>
+          <a href="/Adminpanel/index.html" id="adminLink">Admin Panel</a>
+          <a href="/loginpage/login.html" id="userNav">
+  <ion-icon name="person-circle-outline"></ion-icon>
+  <span id="navText">Login/SignUp</span>
+</a> 
         </div>
         <button>Contact Us</button>
       </div>
     </nav>
-    <div class="section-container header-container">
-      <h2 class="section-header">Find and Book <br> A Great Experience</h2>
-      <!-- <img src="headerimg.jpg" alt="" class="head-image"> -->
-       <div class="booking-container">
+<div class="section-container header-container">
+    <h2 class="section-header">Find and Book <br> A Great Experience</h2>
+       
+  <div class="booking-container">
 
-<h1>Book Your Train Ticket</h1>
+      <h1>Book Your Train Ticket</h1>
 
-<form id="bookingForm">
+      <form id="bookingForm">
 
-<input type="text" id="username" placeholder="Enter Username">
+        <input type="text" id="username" placeholder="Enter Username">
 
-<input type="text" placeholder="From Station" id="from">
+        <input type="text" placeholder="From Station" id="trainFrom">
 
-<input type="text" placeholder="To Station" id="to">
+        <input type="text" placeholder="To Station" id="trainTo">
 
-<input type="date" id="date">
+        <input type="date" id="trainDate">
 
-<select id="class">
-<option>Select Train Class</option>
-<option>Sleeper</option>
-<option>AC 3 Tier</option>
-<option>AC 2 Tier</option>
-<option>First Class</option>
-<option>Chair Car</option>
-</select>
+        <select id="class">
+          <option>Select Train Class</option>
+          <option>Sleeper</option>
+          <option>AC 3 Tier</option>
+          <option>AC 2 Tier</option>
+          <option>First Class</option>
+          <option>Chair Car</option>
+        </select>
 
-<input type="number" id="passengers" placeholder="Passengers">
+        <input type="number" id="trainPassengers" placeholder="Passengers">
 
-<button type="submit" class="btn">Search Train</button>
+        <button type="submit" class="btn">Book Train</button>
 
-</form>
+      </form>
 
-<p id="msg"></p>
+    <p id="msg"></p>
 
+  </div>
 </div>
-    </div>
 
   </header>
-
-  <!-- main(hero section) -->
-
-  <!-- <section class="section-container booking-container" id="book">
-    <div class="booking-nav">
-      <span>Economy Class</span>
-      <span id="bclass">Business Class</span>
-      <span>First Class</span>
-    </div>
-    <form>
-      <div class="form-group">
-        <span><i class="fa-solid fa-location-dot"></i></span>
-        <div class="input-content">
-          <div class="input-group">
-            <input type="text">
-            <label for="">Location</label>
-          </div>
-          <p class="form-p">Where are you going ?</p>
-        </div>
-      </div>
-      <div class="form-group">
-        <span><i class="fa-regular fa-user"></i></span>
-        <div class="input-content">
-          <div class="input-group">
-            <input type="text">
-            <label for="">Travellers</label>
-          </div>
-          <p class="form-p">Add guests</p>
-        </div>
-      </div>
-      <div class="form-group">
-        <span><i class="fa-regular fa-calendar"></i></span>
-        <div class="input-content">
-          <div class="input-group">
-            <input type="number">
-            <label for="">Departure</label>
-          </div>
-          <p class="form-p">Add Date</p>
-        </div>
-      </div>
-      <div class="form-group">
-        <span><i class="fa-regular fa-calendar"></i></span>
-        <div class="input-content">
-          <div class="input-group">
-            <input type="number">
-            <label for="">Return</label>
-          </div>
-          <p class="form-p">Add Date</p>
-        </div>
-      </div>
-    </form>
-  </section> -->
  
 
   <section class="section-container plan-container" id="about">
@@ -145,9 +98,9 @@
       </div>
 
       <div class="right-content">
-        <img id="imge1" src="imge1.jpeg" alt="">
-        <img id="imge2" src="imge2.jpeg" alt="">
-        <img id="imge3" src="imge3.jpeg" alt="">
+        <img id="imge1" src="img1.jpeg" alt="">
+        <img id="imge2" src="img3.jpeg" alt="">
+        <img id="imge3" src="img2.jpeg" alt="">
       </div>
     </div>
   </section>
@@ -213,7 +166,9 @@
             </div>
         </div>
     </footer>
-    <script src="script.js"></script>
+    <!-- <script src="script.js"></script> -->
+    <script src="trainbook.js"></script>
+    <script src="/AdminPanel/script.js"></script>
 </body>
 
 </html>
