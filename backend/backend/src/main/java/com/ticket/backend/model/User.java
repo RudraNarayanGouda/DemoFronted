@@ -6,7 +6,7 @@ import jakarta.persistence.*;
 @Table(name = "users")
 public class User {
 
-     @Id
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
@@ -15,7 +15,10 @@ public class User {
     private String password;
     private String role; // USER or ADMIN
 
-    // getters & setters
+    @Column
+    private String otp; // temporary OTP for reset password
+
+    // ===== Getters & Setters =====
     public Long getId() { return id; }
 
     public String getName() { return name; }
@@ -29,4 +32,7 @@ public class User {
 
     public String getRole() { return role; }
     public void setRole(String role) { this.role = role; }
+
+    public String getOtp() { return otp; }
+    public void setOtp(String otp) { this.otp = otp; }
 }

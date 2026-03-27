@@ -1,25 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Forget password</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Password Reset</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-    <div class="container">
-        <h1>Forget Password ?</h1>
-        <div class="main">
-            <label for="email">Email</label>
-            <input type="email" id="email" placeholder="Enter user email">
-            <a href="">Send Otp</a>
-            <label for="num">OTP</label>
-            <input type="number" id="num" placeholder="Enter valid otp">
-            <a href="/resetpassword/index.html" id="verify">Verify Otp</a>
-        </div>
-    </div>
-</body>
+ <video autoplay muted loop playsinline>
+  <source src="video_20260323_154429_edit.mp4" type="video/mp4">
+</video>
+<div class="container">
+    <h1>Reset Password</h1>
 
+    <!-- Step 1: Enter Email & Send OTP -->
+    <div id="emailStep">
+        <label for="email">Enter your email</label>
+        <input type="email" id="email" placeholder="Email">
+        <button id="sendOtpBtn">Send OTP</button>
+    </div>
+
+    <!-- Step 2: Verify OTP -->
+    <div id="otpStep" class="hidden">
+        <label for="otp">Enter OTP</label>
+        <input type="text" id="otp" placeholder="OTP">
+        <button id="verifyOtpBtn">Verify OTP</button>
+    </div>
+
+    <!-- Step 3: Reset Password -->
+    <div id="resetStep" class="hidden">
+        <label for="newpass">New Password</label>
+        <input type="password" id="newpass" placeholder="New Password">
+        <label for="confirmPass">Confirm Password</label>
+        <input type="password" id="confirmPass" placeholder="Confirm Password">
+        <button id="resetBtn">Set Password</button>
+    </div>
+
+</div>
+
+<script src="forgot.js"></script>
+
+</body>
 </html>

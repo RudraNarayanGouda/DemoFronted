@@ -1,53 +1,84 @@
-body{
-    margin: 0;
-    padding: 0;
-    font-family: 'Courier New', Courier, monospace;
+/* ===== Container ===== */
+body {
+    font-family: Arial, sans-serif;
+    background: #f0f2f5;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-image: url("forgetbackground.jpeg");
-    /* background-attachment: fixed; */
-    background-repeat: no-repeat;
-    background-size: cover;
+    margin: 0;
 }
-.container{
-    width: 60%;
-    max-width: 350px;
-    min-width: 250px;
-    color:white;
-    border: 1px groove burlywood;
-    padding: 2rem;
-    border-radius: 0.5rem;
-}
-.main{
-    width: 90%;
-    border-top: 1px solid rgb(167, 99, 99);
-    padding: 1rem;
-}
-.main label{
-    display: block;
-    padding: 0.5rem 0rem;
-    font-size: larger;
-}
-.main input{
-    display: inline-block;
+
+video {
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
-    padding: 0.5rem;
-    margin-bottom: 0.5rem;
+    height: 100%;
+    object-fit: cover;
+    z-index: -2;
 }
-.main a{
-    text-decoration: none;
-    color: antiquewhite;
+.container {
+    background: rgba(255, 255, 255, 0.15); /* translucent white */
+    backdrop-filter: blur(10px); /* frosted glass effect */
+    -webkit-backdrop-filter: blur(10px); /* Safari support */
+    border-radius: 15px;
+    padding: 30px;
+    width: 350px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white; /* text color for visibility */
 }
-#verify{
-    display: inline-block;
-    width: 100%;
-    background-color: antiquewhite;
-    border: 1px solid whitesmoke;
-    border-radius: 2rem;
-    color: black;
+
+
+h1 {
     text-align: center;
-    padding: 0.5rem;
-    margin: 1rem 0rem;
+    margin-bottom: 25px;
+}
+
+label {
+    display: block;
+    margin: 12px 0 6px;
+}
+
+input {
+    width: 100%;
+    padding: 10px 12px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+button {
+    margin-top: 15px;
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+.hidden {
+    display: none;
+}
+
+.otp-section {
+    margin-top: 20px;
+}
+@media (min-width: 481px) and (max-width: 768px) {
+    .container {
+        width: 890%;
+        padding: 25px;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
 }

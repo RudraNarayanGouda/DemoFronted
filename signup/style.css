@@ -1,96 +1,34 @@
-body {
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    overflow: hidden;
-    position: relative;
-}
-
-/* Video background */
-video {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: -2;
-}
-
-/* Glass overlay container */
+/* Default container for desktop */
 .container {
-    background: rgba(255, 255, 255, 0.15); /* translucent white */
-    backdrop-filter: blur(10px); /* frosted glass effect */
-    -webkit-backdrop-filter: blur(10px); /* Safari support */
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     border-radius: 15px;
     padding: 30px;
-    width: 350px;
+    width: 400px; /* increase from 350px to 400px */
+    max-width: 90%;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
     border: 1px solid rgba(255, 255, 255, 0.3);
-    color: white; /* text color for visibility */
-}
-
-/* Form title */
-h2 {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-/* Inputs styling */
-input {
-    background: rgba(255, 255, 255, 0.2);
     color: white;
-    width: 100%;
-    padding: 10px;
-    margin: 8px 0;
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    border-radius: 5px;
-    outline: none;
+    margin: auto;
 }
 
-/* Placeholder color */
-input::placeholder {
-    color: rgba(255, 255, 255, 0.7);
+/* For small devices (mobile/tablet) */
+@media (max-width: 768px) {
+    .container {
+        width: 90%;           /* nearly full width */
+        max-width: 450px;     /* optional max width */
+        padding: 25px;
+        border-radius: 15px;  /* keep some rounding */
+        margin: 20px auto;    /* add top-bottom spacing */
+    }
 }
 
-/* Captcha box */
-.captcha-box {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.captcha {
-    background: rgba(255, 255, 255, 0.2);
-    padding: 10px;
-    font-weight: bold;
-    letter-spacing: 3px;
-    color: white;
-    border-radius: 5px;
-}
-
-button {
-    width: 100%;
-    padding: 10px;
-    margin-top: 10px;
-    background: rgba(0, 123, 255, 0.6);
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-button:hover {
-    background: rgba(0, 123, 255, 0.9);
-}
-
-.error {
-    color: #ff6b6b;
-    font-size: 14px;
-    margin-top: 5px;
-    text-align: center;
+/* Very small devices (phones <480px) */
+@media (max-width: 480px) {
+    .container {
+        width: 95%;          /* almost full screen width */
+        padding: 20px;
+        margin: 15px auto;
+    }
 }

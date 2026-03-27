@@ -29,7 +29,7 @@ document.getElementById("loginForm").addEventListener("submit", function(e) {
         console.log(localStorage.getItem("role"))
         // redirect
          setTimeout(() => {
-            window.location.href = "/BusPage/main.html";
+            window.location.href = "/BusPage/index.html";
         }, 500);
     })
     .catch(err => {
