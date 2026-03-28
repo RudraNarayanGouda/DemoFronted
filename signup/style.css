@@ -1,34 +1,172 @@
-/* Default container for desktop */
-.container {
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border-radius: 15px;
-    padding: 30px;
-    width: 400px; /* increase from 350px to 400px */
-    max-width: 90%;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    color: white;
-    margin: auto;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: Arial, sans-serif;
 }
 
-/* For small devices (mobile/tablet) */
-@media (max-width: 768px) {
-    .container {
-        width: 90%;           /* nearly full width */
-        max-width: 450px;     /* optional max width */
-        padding: 25px;
-        border-radius: 15px;  /* keep some rounding */
-        margin: 20px auto;    /* add top-bottom spacing */
+/* BODY CENTER FIX */
+body{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+    overflow:hidden;
+    position:relative;
+}
+
+/* VIDEO BACKGROUND */
+video{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    z-index:-2;
+}
+
+/* CONTAINER (GLASS EFFECT) */
+.container{
+    width:100%;
+    max-width:380px;
+    padding:30px;
+
+    background:rgba(255,255,255,0.12);
+    backdrop-filter:blur(12px);
+    -webkit-backdrop-filter:blur(12px);
+
+    border-radius:15px;
+    box-shadow:0 8px 32px rgba(0,0,0,0.3);
+    border:1px solid rgba(255,255,255,0.25);
+
+    color:white;
+}
+
+/* TITLE */
+h2{
+    text-align:center;
+    margin-bottom:20px;
+}
+
+/* INPUT */
+input{
+    width:100%;
+    padding:12px;
+    margin:8px 0;
+
+    border-radius:8px;
+    border:1px solid rgba(255,255,255,0.3);
+
+    background:rgba(255,255,255,0.2);
+    color:white;
+    outline:none;
+}
+
+/* PLACEHOLDER */
+input::placeholder{
+    color:rgba(255,255,255,0.7);
+}
+
+/* CAPTCHA */
+.captcha-box{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:10px;
+    margin-top:5px;
+}
+
+.captcha{
+    flex:1;
+    text-align:center;
+    padding:10px;
+    border-radius:6px;
+    background:rgba(255,255,255,0.2);
+    letter-spacing:3px;
+    font-weight:bold;
+}
+
+/* BUTTON */
+button{
+    width:100%;
+    padding:12px;
+    margin-top:12px;
+
+    border:none;
+    border-radius:8px;
+
+    background:linear-gradient(45deg,#007bff,#00c6ff);
+    color:white;
+    font-size:15px;
+
+    cursor:pointer;
+    transition:0.3s;
+}
+
+button:hover{
+    transform:translateY(-2px);
+    box-shadow:0 5px 15px rgba(0,123,255,0.5);
+}
+
+/* ERROR */
+.error{
+    color:#ff6b6b;
+    font-size:14px;
+    margin-top:8px;
+    text-align:center;
+}
+
+/* ========================= */
+/* 📱 TABLET RESPONSIVE */
+/* ========================= */
+@media (max-width:768px){
+    body{
+        padding:20px;
+    }
+
+    .container{
+        max-width:100%;
+        padding:25px;
     }
 }
 
-/* Very small devices (phones <480px) */
-@media (max-width: 480px) {
-    .container {
-        width: 95%;          /* almost full screen width */
-        padding: 20px;
-        margin: 15px auto;
+/* ========================= */
+/* 📱 MOBILE RESPONSIVE */
+/* ========================= */
+@media (max-width:480px){
+
+    body{
+        align-items:flex-start;
+        padding-top:40px;
+    }
+
+    .container{
+        width:100%;
+        padding:20px;
+        border-radius:12px;
+    }
+
+    h2{
+        font-size:20px;
+    }
+
+    input{
+        padding:10px;
+        font-size:14px;
+    }
+
+    button{
+        padding:10px;
+        font-size:14px;
+    }
+
+    .captcha-box{
+        flex-direction:column;
+        align-items:stretch;
+    }
+
+    .captcha{
+        width:100%;
     }
 }
